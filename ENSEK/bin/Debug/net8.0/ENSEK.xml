@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ENSEK</name>
+    </assembly>
+    <members>
+        <member name="M:Controllers.AccountController.Get">
+            <summary>
+            This will return a list of Accounts
+            </summary>
+            <returns>List of Accounts within system</returns>
+            <response code="200">Requst Successful</response>
+        </member>
+        <member name="M:Controllers.AccountController.Post(Microsoft.AspNetCore.Http.IFormFileCollection)">
+            <summary>
+            Takes a CSV file of accounts to add into the system
+            </summary>
+            <param name="file">CSV file of accounts to import</param>
+            <returns>List of Accounts within system</returns>
+            <response code="200">Requst Successful</response>
+        </member>
+        <member name="M:Controllers.AccountController.GetAccount(System.Int64)">
+            <summary>
+            A Single Account with its related Readings
+            </summary>
+            <returns>An Account with its Readings</returns>
+            <response code="404">Account not found</response>
+            <response code="200">Requst Successful</response>
+        </member>
+        <member name="M:Controllers.AccountController.PostAccount(System.Int64,Models.Account)">
+            <summary>
+            Creates a new Single Account
+            </summary>
+            <returns>The account just created</returns>
+            <response code="400">If the account object does not share the id from the url</response>
+            <response code="500">Requst Unsuccessful, failed to create account</response>
+            <response code="201">Requst Successful</response>
+        </member>
+        <member name="M:Controllers.AccountController.PutAccount(System.Int64,Models.Account)">
+            <summary>
+            Updates a Single Account
+            </summary>
+            <returns>The account just updated</returns>
+            <response code="404">If the account does not exist</response>
+            <response code="200">Requst Successful</response>
+        </member>
+        <member name="M:Controllers.AccountController.DeleteAccount(System.Int64)">
+            <summary>
+            Deletes a Single Account
+            </summary>
+            <response code="404">If the account does not exist</response>
+            <response code="500">Requst Unsuccessful, failed to delete account</response>
+            <response code="200">Requst Successful</response>
+        </member>
+        <member name="M:Controllers.ReadingController.Get">
+            <summary>
+            This will return a list of Readings
+            </summary>
+            <returns>List of Readings within system</returns>
+            <response code="200">Requst Successful</response>
+        </member>
+        <member name="M:Controllers.ReadingUploadController.Post(Microsoft.AspNetCore.Http.IFormFileCollection)">
+            <summary>
+            Takes a CSV file of readings for multiple accounts and processes them
+            </summary>
+            <param name="file">CSV file of readings to import</param>
+            <returns>Summary of the processed Readings, including valid, invalid and unknown readings</returns>
+            <response code="200">Requst Successful</response>
+        </member>
+    </members>
+</doc>
